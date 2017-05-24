@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-center"><%= @article.title %></h1>
+  <div class="well">
+    <%= raw Kramdown::Document.new(@article.content).to_html %>
+  </div>
+  <%= link_to "Edit article", edit_article_path(@article), class: "btn btn-warning" %>
+  <%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-danger" %>
+  <%= link_to "Home", articles_path, class: "btn btn-default" %>
+
+</div>
